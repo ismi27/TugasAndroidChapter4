@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:background="#293859" />
+
+    <LinearLayout
+        android:id="@+id/topbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical"
+        android:padding="16dp">
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Review Applicant"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/topbar2"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp">
+
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="200dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/circularbordersolid"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="textMultiLine"
+                    android:lines="8"
+                    android:hint="Tell all about the applicant"
+                    android:minLines="6"
+                    android:gravity="top|left"
+                    android:maxLines="10"
+                    android:scrollbars="vertical"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/circularbordersolid"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:fontFamily="@font/proximanovaregular"
+                    android:text="Does the applicant fit with the company culture?"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/rg_JenisKelamin"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="-7dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rd_yes"
+                        android:layout_width="93dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="40dp"
+                        android:checked="true"
+                        android:onClick="fungsiRBJK"
+                        android:text="Yes" />
+
+                    <RadioButton
+                        android:id="@+id/rd_no"
+                        android:layout_width="104dp"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:onClick="fungsiRBJK"
+                        android:text="No" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/proximanovaregular"
+                android:text="How many stars the applicant deserves?"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+
+            <RatingBar
+                android:clickable="true"
+                android:id="@+id/rtb_Kualitas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="0dp"
+                android:numStars="5"
+                android:rating="3.8"
+                android:focusable="true" />
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/proximanovaregular"
+                android:text=" "
+                android:textSize="17sp"
+                android:id="@+id/txt_TampilNilai"
+                android:layout_marginBottom="20dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/circularbordersolid"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:id="@+id/send"
+                        android:background="@color/green"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/proximanovaregular"
+                        android:text="Send"
+                        android:textColor="#424242"
+                        android:layout_marginRight="40dp"
+                        android:textSize="11sp"
+                        android:textStyle="bold"/>
+
+                    <Button
+                        android:id="@+id/abort"
+                        android:background="@color/red"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="false"
+                        android:fontFamily="@font/proximanovaregular"
+                        android:text="Abort"
+                        android:textColor="#424242"
+                        android:textSize="11sp"
+                        android:layout_toRightOf="@+id/send"
+                        android:textStyle="bold"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+    </ScrollView>
+</RelativeLayout>
